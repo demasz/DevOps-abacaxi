@@ -6,6 +6,7 @@ Interface web em **React + Vite** do sistema da Fazenda de Abacaxis. Tem as tela
 - **Painel** com total colhido, vendido, estoque e faturamento
 - **Colheitas**: registrar data e quantidade de abacaxis colhidos
 - **Vendas**: registrar vendas (data, quantidade, preço, cliente)
+- **Menu responsivo**: navegação adaptada a telas menores, com indicação da tela ativa
 
 Este projeto só exibe as telas. Os dados vêm da API, que fica na pasta [../abacaxi-backend](../abacaxi-backend) do mesmo repositório (**devops-abacaxi**).
 
