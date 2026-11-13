@@ -64,6 +64,11 @@ button.excluir { background: #c62828; padding: 4px 10px; }
   align-items: center;
   gap: 10px;
 }
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 .usuario-nome {
   max-width: 180px;
   overflow: hidden;
@@ -75,8 +80,41 @@ button.excluir { background: #c62828; padding: 4px 10px; }
   border: 1px solid rgba(255, 255, 255, 0.55);
 }
 .botao-sair:hover { background: rgba(255, 255, 255, 0.14); }
+.language-selector {
+  display: flex;
+  align-items: center;
+}
+.language-selector select {
+  max-width: 100%;
+  padding: 8px 28px 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font: inherit;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 main { max-width: 960px; margin: 24px auto; padding: 0 16px; }
+.currency-notice {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-left: 4px solid #f9c80e;
+  border-radius: 4px;
+  background: #fff4bf;
+  color: #413700;
+  font-size: 0.9rem;
+}
 
 .abacaxi-large{
   font-size: 1.8rem;
@@ -98,7 +136,15 @@ input {
   font-size: 1rem;
 }
 
-.login { display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 16px; }
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  min-height: 100vh;
+  padding: 16px;
+}
 .login form { width: 100%; max-width: 340px; display: flex; flex-direction: column; gap: 12px; }
 .login h1 { text-align: center; font-size: 1.4rem; color: #2e7d32; }
 
@@ -130,7 +176,7 @@ th, td { text-align: left; padding: 8px; border-bottom: 1px solid #eee; }
     grid-row: 2;
   }
   .menu-item { flex: 1; }
-  .usuario { grid-column: 2; grid-row: 1; }
+  .header-actions { grid-column: 2; grid-row: 1; gap: 8px; }
   .usuario-nome { max-width: 100px; }
 }
 
@@ -139,5 +185,10 @@ th, td { text-align: left; padding: 8px; border-bottom: 1px solid #eee; }
   .marca { font-size: 0.9rem; }
   .menu-navegacao { gap: 6px; }
   .menu-item { padding: 8px; font-size: 0.85rem; }
+  .header-actions { gap: 6px; }
   .usuario { gap: 6px; }
+}
+
+@media (max-width: 540px) {
+  .usuario-nome { display: none; }
 }

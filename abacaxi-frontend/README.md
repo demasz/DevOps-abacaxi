@@ -7,8 +7,13 @@ Interface web em **React + Vite** do sistema da Fazenda de Abacaxis. Tem as tela
 - **Colheitas**: registrar data e quantidade de abacaxis colhidos
 - **Vendas**: registrar vendas (data, quantidade, preço, cliente)
 - **Menu responsivo**: navegação adaptada a telas menores, com indicação da tela ativa
+- **Idiomas**: português, inglês e chinês, selecionáveis na tela de login ou no menu
 
 Este projeto só exibe as telas. Os dados vêm da API, que fica na pasta [../abacaxi-backend](../abacaxi-backend) do mesmo repositório (**devops-abacaxi**).
+
+### Idiomas e moedas
+
+Em português, os valores são formatados em reais (BRL). Em inglês e chinês, são exibidos em dólares americanos (USD). A troca de idioma **não converte valores nem aplica cotação**: apenas muda a moeda usada na formatação do mesmo valor numérico.
 
 ## Como o frontend encontra a API?
 
