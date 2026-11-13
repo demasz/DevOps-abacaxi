@@ -13,7 +13,7 @@ Este projeto só exibe as telas. Os dados vêm da API, que fica na pasta [../aba
 
 ### Idiomas e moedas
 
-Em português, os valores são formatados em reais (BRL). Em inglês e chinês, são exibidos em dólares americanos (USD). A troca de idioma **não converte valores nem aplica cotação**: apenas muda a moeda usada na formatação do mesmo valor numérico.
+Os valores são armazenados e exibidos em reais (BRL) em todos os idiomas. A troca de idioma não altera a moeda nem converte os valores.
 
 ## Como o frontend encontra a API?
 

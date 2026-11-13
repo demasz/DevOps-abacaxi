@@ -18,8 +18,8 @@ const TRADUCOES = {
     totalHarvested: 'Total colhido',
     totalSold: 'Total vendido',
     stock: 'Em estoque',
-    revenue: 'Faturamento (R$)',
-    currencyNotice: 'Na versão em inglês e chinês, os valores são exibidos em USD sem conversão cambial nem para a moeda local.',
+    revenue: 'Faturamento (BRL)',
+    currencyNotice: 'Todos os valores monetários são armazenados e exibidos em reais (BRL). A troca de idioma não converte moedas.',
     registerHarvest: 'Registrar colheita',
     date: 'Data',
     quantity: 'Quantidade',
@@ -29,9 +29,9 @@ const TRADUCOES = {
     harvestTableNotes: 'Observação',
     noHarvests: 'Nenhuma colheita registrada.',
     registerSale: 'Registrar venda',
-    unitPrice: 'Preço unitário (R$)',
+    unitPrice: 'Preço unitário (BRL)',
     customer: 'Cliente',
-    unitPriceShort: 'Preço un. (R$)',
+    unitPriceShort: 'Preço un. (BRL)',
     total: 'Total',
     noSales: 'Nenhuma venda registrada.',
     invalidHarvest: 'Informe a data e uma quantidade maior que zero',
@@ -60,8 +60,8 @@ const TRADUCOES = {
     totalHarvested: 'Total harvested',
     totalSold: 'Total sold',
     stock: 'In stock',
-    revenue: 'Revenue (USD)',
-    currencyNotice: 'Amounts are displayed in USD without exchange-rate conversion; they are not converted to local currency.',
+    revenue: 'Revenue (BRL)',
+    currencyNotice: 'All monetary amounts are stored and displayed in Brazilian reais (BRL). Changing the language does not convert currency.',
     registerHarvest: 'Register harvest',
     date: 'Date',
     quantity: 'Quantity',
@@ -71,9 +71,9 @@ const TRADUCOES = {
     harvestTableNotes: 'Notes',
     noHarvests: 'No harvests registered.',
     registerSale: 'Register sale',
-    unitPrice: 'Unit price (USD)',
+    unitPrice: 'Unit price (BRL)',
     customer: 'Customer',
-    unitPriceShort: 'Unit price (USD)',
+    unitPriceShort: 'Unit price (BRL)',
     total: 'Total',
     noSales: 'No sales registered.',
     invalidHarvest: 'Enter a date and a quantity greater than zero',
@@ -102,8 +102,8 @@ const TRADUCOES = {
     totalHarvested: '收获总量',
     totalSold: '销售总量',
     stock: '库存',
-    revenue: '营业额（USD）',
-    currencyNotice: '金额以美元（USD）显示，不进行汇率换算，也不会转换为当地货币。',
+    revenue: '营业额（BRL）',
+    currencyNotice: '所有金额均以巴西雷亚尔（BRL）存储和显示。切换语言不会进行货币换算。',
     registerHarvest: '登记收成',
     date: '日期',
     quantity: '数量',
@@ -113,9 +113,9 @@ const TRADUCOES = {
     harvestTableNotes: '备注',
     noHarvests: '暂无收成记录。',
     registerSale: '登记销售',
-    unitPrice: '单价（USD）',
+    unitPrice: '单价（BRL）',
     customer: '客户',
-    unitPriceShort: '单价（USD）',
+    unitPriceShort: '单价（BRL）',
     total: '总计',
     noSales: '暂无销售记录。',
     invalidHarvest: '请输入日期和大于零的数量',
@@ -128,7 +128,6 @@ const TRADUCOES = {
 };
 
 const LOCALES = { pt: 'pt-BR', en: 'en-US', zh: 'zh-CN' };
-const MOEDAS = { pt: 'BRL', en: 'USD', zh: 'USD' };
 const ERROS_DA_API = {
   'Usuário ou senha inválidos': 'invalidCredentials',
   'Informe a data e uma quantidade maior que zero': 'invalidHarvest',
@@ -160,7 +159,7 @@ export function traduzirErro(mensagem, idioma) {
 export function formatarMoeda(valor, idioma) {
   return Number(valor).toLocaleString(LOCALES[idioma] || LOCALES.pt, {
     style: 'currency',
-    currency: MOEDAS[idioma] || MOEDAS.pt,
+    currency: 'BRL',
   });
 }
 
