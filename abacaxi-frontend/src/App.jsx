@@ -11,7 +11,8 @@ export default function App() {
   const [pagina, setPagina] = useState('painel');
 
   function sair() {
-    localStorage.clear();
+    localStorage.removeItem('token');
+    localStorage.removeItem('usuario');
     setUsuario(null);
   }
 
@@ -19,13 +20,15 @@ export default function App() {
 
   return (
     <>
-      <header>
-        <h1> <span class="abacaxi-large">🍍</span> Fazenda de Abacaxis</h1>
-        <nav>
+      <header className="app-header">
+        <h1 className="marca"><span className="abacaxi-large" aria-hidden="true">🍍</span> Fazenda de Abacaxis</h1>
+        <nav className="menu-navegacao" aria-label="Navegação principal">
           {Object.entries(PAGINAS).map(([chave, nome]) => (
             <button
               key={chave}
-              className={pagina === chave ? 'ativo' : ''}
+              type="button"
+              className={`menu-item${pagina === chave ? ' ativo' : ''}`}
+              aria-current={pagina === chave ? 'page' : undefined}
               onClick={() => setPagina(chave)}
             >
               {nome}
@@ -33,7 +36,8 @@ export default function App() {
           ))}
         </nav>
         <div className="usuario">
-          {usuario} <button onClick={sair}>Sair</button>
+          <span className="usuario-nome">{usuario}</span>
+          <button type="button" className="botao-sair" onClick={sair}>Sair</button>
         </div>
       </header>
       <main>
